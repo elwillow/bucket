@@ -1,0 +1,46 @@
+{
+    "homepage": "http://kitty.9bis.net",
+    "license": "MIT",
+    "version": "0.70.0.3",
+    "url": [
+        "https://www.fosshub.com/KiTTY.html/kitty.exe",
+        "http://www.9bis.net/kitty/?file=kscp.exe#/kscp.exe",
+        "http://www.9bis.net/kitty/?file=klink.exe#/klink.exe",
+        "http://www.9bis.net/kitty/?file=kageant.exe#/kageant.exe",
+        "https://the.earth.li/~sgtatham/putty/latest/w32/puttygen.exe"
+      ],
+    "hash": [
+        "29ee38a850de118760320aec4e1e6b25afbf1d7fcc9d9ac665c9771958da3179",
+        "e2aaaed537e147d65a6143cdf2f27736b1636866aa326dab081c94737d86f074",
+        "f693cec9cd4f5134c701d9f8f4f4d49c249f1ca38a0b7f0ca2fb3b0d5e648598",
+        "2a0374acc3de25a769261323a537fb05255c2ad5f9dd3084a0b235e8d8f2e9f8"
+      ],
+    "bin": [
+        "kitty.exe",
+        "kscp.exe",
+        "klink.exe",
+        "kageant.exe",
+        "puttygen.exe"
+      ],
+    "shortcuts": [
+        [
+          "kitty.exe",
+          "KiTTY"
+        ],
+        [
+          "kageant.exe",
+          "Kageant"
+        ],
+        [
+          "puttygen.exe",
+          "PuTTYgen"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.9bis.net/kitty/check_update.php?version=0.0.0.0",
+        "re": "The last version is ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://www.fosshub.com/KiTTY.html/kitty.exe"
+    }
+}
