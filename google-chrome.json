@@ -1,0 +1,24 @@
+{
+    "version": "66.0.3359.139",
+    "homepage": "https://www.google.com/chrome/browser/",
+    "checkver": {
+        "url": "https://enterprise.google.com/chrome/chrome-browser/",
+        "re": "<span ng-bind=\"win64Version\" class=\"ng-binding\">([\\d.]+)</span>"
+    },
+    "architecture": {
+        "32bit": {
+            "url": "https://dl.google.com/tag/s//dl/chrome/install/googlechromestandaloneenterprise64.msi",
+            "hash": "727be01423d9fcd4a5f0616389e53cc449e4600bebbc4220da20750a89c65444"
+        },
+        "64bit": {
+            "url": "https://dl.google.com/tag/s//dl/chrome/install/googlechromestandaloneenterprise.msi",
+            "hash": "50e182f914b61fb9c7e6bd55a44abd83c898dacf507050b0294243b65647af5e"
+        }
+    },
+    "installer": {
+        "args": [
+            "/quiet ",
+            "/norestart"
+        ]
+    }
+}
