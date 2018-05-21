@@ -1,9 +1,10 @@
 {
     "version": "1.205",
-    "license": "MIT",
+    "license": "OFL-1.0",
     "homepage": "https://github.com/tonsky/FiraCode",
     "url": "https://github.com/tonsky/FiraCode/releases/download/1.205/FiraCode_1.205.zip",
     "hash": "85b2a6de92b71ef0f7715cca32d394484221ec978cb21e5228dc99978a7b7d8d",
+    "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/$version/FiraCode_$version.zip"
     },

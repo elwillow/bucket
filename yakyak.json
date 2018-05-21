@@ -16,12 +16,15 @@
       }
   },
   "extract_dir": "yakyak-win32-x64",
-  "shortcut": [
+  "shortcuts": [[ 
     "yakyak.exe",
-    "YakYak",
-    "/accepteula"
+    "YakYak"
+  ]],
+  "post_install": [
+    "$file=\"$dir/resources/app/node_modules/hangupsjs/lib/init.js\"",
+    "(gc $file).replace(\"html = html.replace(/<\\/?script>/gm, '');\", \"html = html.replace(/<\\/?script.*?>/gm, '');\") | sc $file"
   ],
-  "notes": "Hangs on connecting state. Fix: https://github.com/yakyak/yakyak/issues/919#issuecomment-389866711."
+  "notes": "Applied connecting patch, see https://github.com/yakyak/yakyak/issues/919#issuecomment-389866711.",
   "autoupdate": {
     "architecture": {
       "64bit": {
