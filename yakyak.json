@@ -1,0 +1,35 @@
+{
+  "version": "1.5.0",
+  "homepage": "https://github.com/yakyak/yakyak",
+  "license": "MIT",
+  "checkver": {
+      "github": "https://github.com/yakyak/yakyak"
+  },
+  "architecture": {
+      "32bit": {
+          "url": "https://github.com/yakyak/yakyak/releases/download/v1.5.0/yakyak-1.5.0-win32-ia32.zip",
+          "hash": "c90f1d797b869139c61b8540d42af371ecca934d10664f2eb229106ccc21b422"
+      },
+      "64bit": {
+          "url": "https://github.com/yakyak/yakyak/releases/download/v1.5.0/yakyak-1.5.0-win32-x64.zip",
+          "hash": "681c824d402ed70a6d253f1634e173cfb752390397aa047414525265d01668bf"
+      }
+  },
+  "extract_dir": "yakyak-win32-x64",
+  "shortcut": [
+    "yakyak.exe",
+    "YakYak",
+    "/accepteula"
+  ],
+  "notes": "Hangs on connecting state. Fix: https://github.com/yakyak/yakyak/issues/919#issuecomment-389866711."
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/spf13/hugo/releases/download/v$version/yakyak-$version-win32-ia32.zip"
+      },
+      "32bit": {
+        "url": "https://github.com/spf13/hugo/releases/download/v$version/yakyak-$version-win32-x64.zip"
+      }
+    }
+  }
+}
