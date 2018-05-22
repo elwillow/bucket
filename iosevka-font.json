@@ -1,0 +1,35 @@
+{
+  "version": "1.14.3",
+  "license": "OFL-1.0",
+  "homepage": "https://be5invis.github.io/Iosevka",
+  "url": [
+    "https://github.com/be5invis/Iosevka/releases/download/v1.14.3/01-iosevka-1.14.3.zip",
+    "https://github.com/be5invis/Iosevka/releases/download/v1.14.3/02-iosevka-term-1.14.3.zip"
+  ],
+  "hash": [
+    "47a7cd15ae9b146fa837fcb30557b78657a0ce089781f9903faa395cd4f01d54",
+    "1921f1ad457c01c6700fd87b16651facdaee7193dafe70358919ae869a550689"
+  ],
+  "autoupdate": {
+    "url": [
+      "https://github.com/be5invis/Iosevka/releases/download/v$version/01-iosevka-$version.zip",
+      "https://github.com/be5invis/Iosevka/releases/download/v$version/02-iosevka-term-$version.zip"
+    ]
+  },
+  "installer": {
+    "script": "
+      Get-ChildItem $dir\\ttf | ForEach-Object {
+        New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null
+        Copy-Item \"$dir\\ttf\\$_\" -destination \"$env:windir\\Fonts\"
+      }
+    "
+  },
+  "uninstaller": {
+    "script": "
+      Get-ChildItem $dir\\ttf | ForEach-Object {
+        Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue
+        Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue
+      }
+    "
+  }
+}
